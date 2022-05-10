@@ -35,8 +35,14 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/results/bin)
 
 # ar rcs build/libipb_arithmetic.a build/sum.o build/subtract.o
 add_library(ipb_arithmetic src/subtract.cpp src/sum.cpp)
+
+# 실행파일 생성
 add_executable(example_output src/main.cpp)
+
+# 실행파일에 필요한 라이브러리 링크
 target_link_libraries(example_output ipb_arithmetic)
 
+# 라이브러리 저장
 install(TARGETS ipb_arithmetic DESTINATION ${PROJECT_SOURCE_DIR}/install/lib)
+# 헤더 파일들 저장
 install(DIRECTORY include/ DESTINATION ${PROJECT_SOURCE_DIR}/install/include/)

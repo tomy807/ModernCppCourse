@@ -5,18 +5,14 @@ using namespace std;
 
 int main() {
   random_device rd;
-  mt19937_64 rng(rd());
+  mt19937 rng(rd());
 
-  uniform_int_distribution<> dist1(0, 99);
+  uniform_int_distribution<> dist1(1, 98);
   int target = dist1(rng);
   bool flag = true;
-  //   cout << "min random value ==" << dist1.min() << endl;
-  //   cout << "max random value ==" << dist1.max() << endl;
-  //   cout << "a random value ==" << dist1(rng) << endl;
 
   while (flag) {
     int input_number;
-    cout << "--------------------" <<endl;
     cout << "input a number(0~99)" << endl;
     cin >> input_number;
     if (!cin.fail()) {
@@ -30,7 +26,7 @@ int main() {
         }
       }
       else {
-        cout << "[WARNING] : Number must be between 0 and 99" << endl;
+        cerr << "[WARNING] : Number must be between 0 and 99" << endl;
       }
     }
     else {
@@ -38,6 +34,6 @@ int main() {
       exit(EXIT_FAILURE);
     }
   }
-  cout << "you correct!  " << target << " is random number." << endl;
+  cout <<target << endl;
   exit(EXIT_SUCCESS);
 }

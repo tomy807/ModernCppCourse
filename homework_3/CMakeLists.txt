@@ -13,6 +13,7 @@ include_directories(include/)
 
 link_directories()
 
+#실행파일 위치 설정
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 
 add_library(html_writer src/html_writer.cpp)

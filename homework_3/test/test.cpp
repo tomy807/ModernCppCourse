@@ -17,7 +17,15 @@ void AddImage(const string &img_path) {
   cout << file_num << endl;
 }
 
+void test_int(string& i) {
+  i+="A";
+  return;
+}
+
 int main() {
-  const string img_path = "./web_app/data/000000.png";
-  AddImage(img_path);
+  // const string img_path = "./web_app/data/000000.png";
+  // AddImage(img_path);
+  string test_for_int = "Hello";
+  test_int(test_for_int);
+      cout <<test_for_int << endl;
 }

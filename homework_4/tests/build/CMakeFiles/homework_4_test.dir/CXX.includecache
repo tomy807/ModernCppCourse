@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tomy807/homeworks/homework_4/tests/homework_4.h
+vector
+-
+string
+-
+
+/home/tomy807/homeworks/homework_4/tests/test_ipb_algorithm.cpp
+catch2/catch_all.hpp
+-
+cstdint
+-
+vector
+-
+homework_4.h
+/home/tomy807/homeworks/homework_4/tests/homework_4.h
+
+/home/tomy807/homeworks/homework_4/tests/test_named_vector.cpp
+string
+-
+tuple
+-
+vector
+-
+boost/core/demangle.hpp
+-
+catch2/catch_all.hpp
+-
+homework_4.h
+/home/tomy807/homeworks/homework_4/tests/homework_4.h
+

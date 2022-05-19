@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tomy807/homeworks/homework_4/tests/homework_4.h
+vector
+-
+string
+-
+
+/home/tomy807/homeworks/homework_4/tests/ipb_algorithm.cpp
+homework_4.h
+/home/tomy807/homeworks/homework_4/tests/homework_4.h
+cctype
+-
+iostream
+-
+vector
+-
+algorithm
+-
+

@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/homework_4_test.dir/test_named_vector.cpp.o CMakeFiles/homework_4_test.dir/test_ipb_algorithm.cpp.o CMakeFiles/homework_4_test.dir/test_main.cpp.o  -o ../homework_4_test  libipb_algorithm.a /usr/local/lib/libCatch2.a 

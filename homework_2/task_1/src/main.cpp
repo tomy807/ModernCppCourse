@@ -3,20 +3,24 @@
 #include <cstdlib>
 using namespace std;
 
+
 int main() {
   random_device rd;
   mt19937 rng(rd());
 
-  uniform_int_distribution<> dist1(1, 98);
+  const int MAX_RAND_RANGE = 98;
+
+  uniform_int_distribution<> dist1(1, MAX_RAND_RANGE);
   int target = dist1(rng);
   bool flag = true;
 
   while (flag) {
-    int input_number;
+    int input_number = 0;
     cout << "input a number(0~99)" << endl;
     cin >> input_number;
+    const int MAX_NUMBER = 99;
     if (!cin.fail()) {
-      if (input_number >= 0 && input_number <= 99) {
+      if (input_number >= 0 && input_number <= MAX_NUMBER) {
         if (input_number > target) {
           cout << "random number is smaller" << endl;
         } else if (input_number < target) {
@@ -24,8 +28,7 @@ int main() {
         } else {
           flag=false;
         }
-      }
-      else {
+      } else {
         cerr << "[WARNING] : Number must be between 0 and 99" << endl;
       }
     }

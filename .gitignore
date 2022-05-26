@@ -8,6 +8,10 @@ homework_5/data/
 lecture/
 tests/data
 homework_5/tests/data/freiburg/dummy/
+### homework_6
+/homework_6/unittest/
+/homework_6/results/
+*.pgm
 ### C++ ###
 # Prerequisites
 *.d

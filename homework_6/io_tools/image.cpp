@@ -1,7 +1,7 @@
 #include "../include/image.hpp"
 #include <fstream>
 #include <cmath>
-bool igg::Image::FillFromPgm(const std::string &file_name) {
+bool igg::Image::FillFromPgm(const std::string& file_name) {
   std::ifstream in(file_name, std::ios_base::in);
   if (!in) {
     return false;
@@ -29,7 +29,7 @@ bool igg::Image::FillFromPgm(const std::string &file_name) {
   return true;
 }
 
-bool igg::Image::WriteToPgm(const std::string &file_name) {
+bool igg::Image::WriteToPgm(const std::string& file_name) {
   int max_val=0;
   std::ofstream out(file_name);
   if (!out) {
@@ -60,7 +60,7 @@ std::vector<float> const igg::Image::ComputeHistogram(int bins) const {
       histogram[i] += 1;
     }
   }
-  for (float &i : histogram) {
+  for (float& i : histogram) {
     i /= total_size;
   }
   return histogram;

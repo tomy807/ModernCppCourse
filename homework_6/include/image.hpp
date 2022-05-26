@@ -11,23 +11,23 @@ public:
     cols_ = 0;
     
   };
-  Image(const int &rows, const int &cols) {
+  Image(const int& rows, const int& cols) {
     rows_ = rows;
     cols_ = cols;
     data_.resize(rows*cols);
   };
-  Image(const int &rows, const int &cols, std::vector<uint8_t> data) {
+  Image(const int& rows, const int& cols, std::vector<uint8_t> data) {
     rows_ = rows;
     cols_ = cols;
     data_.resize(rows * cols);
     data_ = data;
   }
-  Image(const Image &other) {
+  Image(const Image& other) {
     cols_ = other.cols_;
     rows_ = other.rows_;
     data_ = other.data_;
   }
-  Image &operator=(const Image &other) {
+  Image &operator=(const Image& other) {
     if (this != &other) {
       cols_ = other.cols_;
       rows_ = other.rows_;
@@ -35,7 +35,7 @@ public:
     }
     return *this;
   }
-  Image(Image &&other) {
+  Image(Image&& other) {
     cols_ = other.cols_;
     rows_ = other.rows_;
     data_ = other.data_;
@@ -45,7 +45,7 @@ public:
     other.data_ = {};
   }
 
-  Image &operator=(Image &&other) {
+  Image &operator=(Image&& other) {
     if (this != &other) {
       cols_ = other.cols_;
       rows_ = other.rows_;
@@ -58,14 +58,14 @@ public:
     return *this;
   }
 
-  int &rows() { return rows_; };
-  int &cols() { return cols_; }
+  int& rows() { return rows_; };
+  int& cols() { return cols_; }
   int rows() const { return rows_; };
   int cols() const { return cols_; };
-  const uint8_t at(int &row, int &col) const {
+  const uint8_t at(int& row, int &col) const {
     return data_[row * cols_ + col];
   };
-  uint8_t & at(const int row, const int col) {
+  uint8_t& at(const int row, const int col) {
     return data_[row * cols_ + col];
   };
   bool FillFromPgm(const std::string &file_name);

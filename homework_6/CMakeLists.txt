@@ -1,7 +1,10 @@
 project(homework_6)
 cmake_minimum_required(VERSION 3.7)
 
-set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/results/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
-add_library(image ../io_tools/image.cpp)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/tests)
 
+add_subdirectory(io_tools)
+add_subdirectory(tests)

@@ -7,7 +7,6 @@ include_directories(results/lib/)
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/)
 set(TEST_BINARY ${PROJECT_NAME}_test)
 
-add_library(image ../io_tools/image.cpp)
 add_executable(${TEST_BINARY}
                test_init.cpp
                test_histogram.cpp

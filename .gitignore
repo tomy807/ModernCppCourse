@@ -12,11 +12,14 @@ homework_5/tests/data/freiburg/dummy/
 /homework_6/unittest/
 /homework_6/results/
 *.pgm
+### homework_7
+/homework_7/unittest/
 ### C++ ###
 # Prerequisites
 *.d
 *.idx
 *.png
+*.bin
 # Compiled Object files
 *.slo
 *.lo

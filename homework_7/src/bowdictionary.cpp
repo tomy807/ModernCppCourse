@@ -1,0 +1,1 @@
+#include "../include/bowdictionary.hpp"

@@ -4,7 +4,7 @@
 #include <fstream>
 namespace igg {
 class PpmIoStrategy :public IoStrategy {
-  bool ReadFromDisk(const std::string &file_name) override;
+  tmpImage ReadFromDisk(const std::string &file_name) override;
 };
 } // namespace igg
 #endif

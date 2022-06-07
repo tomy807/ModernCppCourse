@@ -7,12 +7,28 @@
 #include "io_strategies/strategy.hpp"
 namespace igg {
   class Image {
-    class Pixel {
-      public:
-        int red;
-        int green;
-        int blue;
-    };
+    public:
+      class Pixel {
+        public:
+          int red;
+          int green;
+          int blue;
+          Pixel() {
+            red = 0;
+            green = 0;
+            blue = 0;
+          }
+          Pixel(const int &red_, const int &green_, const int &blue_) {
+            red = red_;
+            green = green_;
+            blue = blue_;
+          }
+          Pixel(const Pixel &other) {
+            red = other.red;
+            green = other.green;
+            blue = other.blue;
+          }
+      };
     private:
       int rows_;
       int cols_;
@@ -68,7 +84,6 @@ namespace igg {
         }
         return *this;
       }
-      ~Image();
       int &rows() { return rows_; };
       int &cols() { return cols_; }
       int rows() const { return rows_; };

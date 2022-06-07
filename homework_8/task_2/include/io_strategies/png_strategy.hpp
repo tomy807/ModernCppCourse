@@ -3,7 +3,7 @@
 #include "strategy.hpp"
 namespace igg {
 class PngIoStrategy :public IoStrategy {
-    bool ReadFromDisk(const std::string &file_name) override;
+  tmpImage ReadFromDisk(const std::string &file_name) override;
 };
 } // namespace igg
 #endif

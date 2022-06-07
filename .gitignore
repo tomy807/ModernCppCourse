@@ -16,7 +16,7 @@ homework_5/tests/data/freiburg/dummy/
 /homework_7/unittest/
 
 ### homework_8
-/homework_8/unittest
+/homework_8/unit_test
 ### C++ ###
 # Prerequisites
 *.d

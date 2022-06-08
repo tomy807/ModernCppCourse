@@ -14,8 +14,6 @@ homework_5/tests/data/freiburg/dummy/
 *.pgm
 ### homework_7
 /homework_7/unittest/
-### homework_8
-/homework_8/unit_test
 ### C++ ###
 # Prerequisites
 *.d

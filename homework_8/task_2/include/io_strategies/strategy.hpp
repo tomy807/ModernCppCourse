@@ -39,6 +39,7 @@ public:
   // IoStrategy &operator=(const IoStrategy& other){};
   virtual ~IoStrategy() = default;
   virtual tmpImage ReadFromDisk(const std::string &file_name) = 0;
+  virtual bool WriteToDisk(const std::string &file_name,tmpImage& image) =0;
 };
 } // namespace igg
 #endif

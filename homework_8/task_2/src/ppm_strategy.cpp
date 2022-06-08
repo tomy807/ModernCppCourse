@@ -1,7 +1,6 @@
 #include "../include/io_strategies/ppm_strategy.hpp"
 #include <bits/stdint-uintn.h>
 #include <iostream>
-#include <fstream>
 igg::tmpImage igg::PpmIoStrategy::ReadFromDisk(const std::string &file_name) {
   std::ifstream infile(file_name, std::ios_base::in);
   if (!infile) {

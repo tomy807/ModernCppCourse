@@ -1,6 +1,4 @@
 #include "../include/image.hpp"
-#include <iostream>
-#include <vector>
 
 void igg::Image::SetIoStrategy(std::shared_ptr<IoStrategy> strategy_ptr) {
   this->io_strategy = strategy_ptr;
@@ -31,4 +29,30 @@ bool igg::Image::WriteToDisk(const std::string &file_name) {
   }
   tmpImage image(rows_,cols_,data);
   return this->io_strategy->WriteToDisk(file_name, image);
+}
+void igg::Image::DownScale(int scale) {
+  int down_rows = rows_ / scale;
+  int down_cols = cols_ / scale;
+  Image down_image = Image(down_rows, down_cols);
+  for (int i = 0; i < down_rows; i++) {
+    for (int j = 0; j < down_cols; j++) {
+      down_image.at(i, j) = at(i * scale, j * scale);
+    }
+  }
+  rows_ = down_rows;
+  cols_ = down_cols;
+  data_ = down_image.data_;
+}
+void igg::Image::UpScale(int scale) {
+  int up_rows = rows_ * scale;
+  int up_cols = cols_ * scale;
+  Image up_image = Image(up_rows, up_cols);
+  for (int i = 0; i < up_rows; i++) {
+    for (int j = 0; j < up_cols; j++) {
+      up_image.at(i, j) = at(i / scale, j / scale);
+    }
+  }
+  rows_ = up_rows;
+  cols_ = up_cols;
+  data_ = up_image.data_;
 }

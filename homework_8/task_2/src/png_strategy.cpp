@@ -1,6 +1,6 @@
 #include "../include/io_strategies/png_strategy.hpp"
 #include <png++/png.hpp>
-igg::tmpImage igg::PngIoStrategy::ReadFromDisk(const std::string &file_name) {
+igg::tmpImage igg::PngIoStrategy::ReadFromDisk(const std::string& file_name) {
   png::image<png::rgb_pixel> img(file_name);
   int cols = img.get_height();
   int rows = img.get_width();
@@ -13,15 +13,15 @@ igg::tmpImage igg::PngIoStrategy::ReadFromDisk(const std::string &file_name) {
       red = img[r][c].red;
       green = img[r][c].green;
       blue = img[r][c].blue;
-      tmpPixel h = tmpPixel(red, green, blue);
-    data.emplace_back(h);
+      tmpPixel tmp_pixel = tmpPixel(red, green, blue);
+      data.emplace_back(tmp_pixel);
     }
   }
   tmpImage image(rows, cols, data);
   return image;
 }
-bool igg::PngIoStrategy::WriteToDisk(const std::string &file_name,
-                                     tmpImage &image) {
+bool igg::PngIoStrategy::WriteToDisk(const std::string& file_name,
+                                     tmpImage& image) {
   png::image<png::rgb_pixel> png_image(image.cols_, image.rows_);
   int red = 0;
   int green = 0;

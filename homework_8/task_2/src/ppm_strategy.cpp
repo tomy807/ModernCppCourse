@@ -1,7 +1,7 @@
 #include "../include/io_strategies/ppm_strategy.hpp"
 #include <bits/stdint-uintn.h>
 #include <iostream>
-igg::tmpImage igg::PpmIoStrategy::ReadFromDisk(const std::string &file_name) {
+igg::tmpImage igg::PpmIoStrategy::ReadFromDisk(const std::string& file_name) {
   std::ifstream infile(file_name, std::ios_base::in);
   if (!infile) {
     std::cout << "fail" << std::endl;
@@ -19,16 +19,16 @@ igg::tmpImage igg::PpmIoStrategy::ReadFromDisk(const std::string &file_name) {
     for (int c = 0; c < cols; ++c) {
       for (int i = 0; i < 3; i++) {
         infile >> red >> green >> blue;
-        tmpPixel h = tmpPixel(red, green, blue);
-        data.emplace_back(h);
+        tmpPixel tmp_pixel = tmpPixel(red, green, blue);
+        data.emplace_back(tmp_pixel);
       }
     }
   }
   tmpImage image(rows,cols,data);
   return image;
 }
-bool igg::PpmIoStrategy::WriteToDisk(const std::string &file_name,
-                                     tmpImage &image) {
+bool igg::PpmIoStrategy::WriteToDisk(const std::string& file_name,
+                                     tmpImage& image) {
   std::ofstream out(file_name);
   if (!out) {
     return false;

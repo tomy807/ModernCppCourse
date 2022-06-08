@@ -3,8 +3,8 @@
 void igg::Image::SetIoStrategy(std::shared_ptr<IoStrategy> strategy_ptr) {
   this->io_strategy = strategy_ptr;
 }
-bool igg::Image::ReadFromDisk(const std::string &file_name) {
-  auto tmpImage = this->io_strategy->ReadFromDisk(file_name);
+bool igg::Image::ReadFromDisk(const std::string& file_name) {
+  tmpImage tmpImage = this->io_strategy->ReadFromDisk(file_name);
   rows_ = tmpImage.rows_;
   cols_ = tmpImage.cols_;
   data_.resize(rows_*cols_);
@@ -17,7 +17,7 @@ bool igg::Image::ReadFromDisk(const std::string &file_name) {
   }
   return true;
 }
-bool igg::Image::WriteToDisk(const std::string &file_name) {
+bool igg::Image::WriteToDisk(const std::string& file_name) {
   std::vector<tmpPixel> data;
   data.resize(rows_ * cols_);
   for (int r = 0; r < rows_; r++) {

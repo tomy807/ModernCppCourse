@@ -1,0 +1,5 @@
+project(homework_8)
+cmake_minimum_required(VERSION 3.7)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/tests)
+add_subdirectory(src)
+add_subdirectory(tests)

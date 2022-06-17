@@ -20,6 +20,7 @@ homework_5/tests/data/freiburg/dummy/
 *.idx
 *.png
 *.bin
+
 # Compiled Object files
 *.slo
 *.lo
